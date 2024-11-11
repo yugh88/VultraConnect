@@ -189,6 +189,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### **Contact**
 
-For any inquiries or issues, feel free to reach out via email: `yugjuneja2003@icloud.com`.
+For any inquiries or issues, feel free to reach out via email: `yugjuneja2003@gmail.com`.
 
 ---
