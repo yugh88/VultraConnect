@@ -4,7 +4,7 @@ import openai  # or whichever library you use for your ML model
 app = Flask(__name__)
 
 # Set up API key for OpenAI or your ML model
-openai.api_key = "YOUR_OPENAI_API_KEY"
+openai.api_key = RKKQP6IKWH2N3XMD2ZLKYS532FP3YGPKBXHQ
 
 @app.route('/predict', methods=['POST'])
 def predict():
