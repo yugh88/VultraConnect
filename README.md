@@ -31,12 +31,11 @@ This repository includes both backend and frontend parts of the application. The
 
 ## **Technologies Used**
 
-- **Backend**: PHP, Laravel (or Node.js, Python – depending on your choice)
-- **Frontend**: HTML, CSS, JavaScript (React.js / Vue.js / Angular)
-- **Database**: MySQL / PostgreSQL / MongoDB (depending on your implementation)
+- **Backend**: PHP, Laravel 
+- **Frontend**: HTML, CSS, JavaScript (React.js)
+- **Database**: MySQL 
 - **Cloud Hosting**: Vultr
 - **Version Control**: Git, GitHub
-- **CI/CD**: Jenkins, GitHub Actions
 - **Authentication**: JWT, OAuth (for user authentication)
 - **Containerization**: Docker (for deployment)
 - **Others**: Composer (PHP), NPM (Node.js), Laravel Artisan commands, SSH for server management
