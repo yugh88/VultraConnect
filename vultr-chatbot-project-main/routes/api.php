@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatbotController;
 
 Route::post('/chatbot', [ChatbotController::class, 'handleChat']);
+Route::post('/chatbot', [ChatbotController::class, 'getResponse']);
 
 
 <?php
