@@ -1,26 +1,24 @@
-# serverless/inference_function.py
-import json
-from transformers import pipeline
+from flask import Flask, request, jsonify
+import openai  # or whichever library you use for your ML model
 
-# Load pre-trained model for chat-based responses
-chat_model = pipeline("text-generation", model="gpt2")  # Replace 'gpt2' with specific model if needed
+app = Flask(__name__)
 
-def handle_request(event, context):
-    try:
-        # Parse input data
-        input_text = json.loads(event['body']).get("message", "")
-        
-        # Generate model response
-        response = chat_model(input_text, max_length=100, num_return_sequences=1)
-        reply_text = response[0]["generated_text"]
+# Set up API key for OpenAI or your ML model
+openai.api_key = "YOUR_OPENAI_API_KEY"
 
-        # Return response
-        return {
-            "statusCode": 200,
-            "body": json.dumps({"reply": reply_text})
-        }
-    except Exception as e:
-        return {
-            "statusCode": 500,
-            "body": json.dumps({"error": str(e)})
-        }
+@app.route('/predict', methods=['POST'])
+def predict():
+    user_input = request.json.get("message")
+    if not user_input:
+        return jsonify({"error": "No input provided"}), 400
+
+    # Generate response (example with OpenAI)
+    response = openai.Completion.create(
+        engine="text-davinci-003", 
+        prompt=user_input, 
+        max_tokens=50
+    )
+    return jsonify({"response": response.choices[0].text.strip()})
+
+if __name__ == "__main__":
+    app.run(debug=True)
